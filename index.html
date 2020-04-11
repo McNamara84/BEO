@@ -25,8 +25,9 @@
                     Rasse:
                 </td>
                 <td>
-                    <select id="rasse" name="rasse">
+                    <select id="rasse" name="rasse" onchange="rasseSwitch()">
                         <option value="barbar">Barbar</option>
+                        <option value="guul">Guul</option>
                     </select>
                 </td>
                 <td>
@@ -39,7 +40,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td title="Stärke beschreibt die rohe physische Muskelkraft einer Figur. Mit einer Stärke von 0 kann man das eigene Körpergewicht für wenige Augenblicke heben oder das doppelte Gewicht über den Boden ziehen.">
                     Stärke:
                 </td>
                 <td id="staerkeAnzeige">
@@ -53,7 +54,7 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td title="Geschicklichkeit beschreibt die Schnellkraft, Beweglichkeit und Reflexe eines Charakters.">
                     Geschicklichkeit:
                 </td>
                 <td id="geschicklichkeitAnzeige">
@@ -67,77 +68,78 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td title="Robustheit steht für die Gesundheit, Widerstandskraft und Ausdauer eines Charakters. Sie entscheidet zudem über die Resistenz gegen Gifte und Krankheiten.">
                     Robustheit:
                 </td>
                 <td id="robustheitAnzeige">
                     0
                 </td>
                 <td>
-                    <button type="button">+</button>
+                    <button type="button" id="robustheitPlus">+</button>
                 </td>
                 <td>
-                    <button type="button">-</button>
+                    <button type="button" id="robustheitMinus">-</button>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td title="Willenskraft steht für die mentale Stärke, die geistige Belastbarkeit und die Konzentrationsfähigkeit einer Figur.">
                     Willenskraft:
                 </td>
                 <td id="willenskraftAnzeige">
                     0
                 </td>
                 <td>
-                    <button type="button">+</button>
+                    <button type="button" id="willenskraftPlus">+</button>
                 </td>
                 <td>
-                    <button type="button">-</button>
+                    <button type="button" id="willenskraftMinus">-</button>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td title="Wahrnehmung repräsentiert die fünf Sinne sowie die allgemeine Aufgewecktheit.">
                     Wahrnehmung:
                 </td>
                 <td id="wahrnehmungAnzeige">
                     0
                 </td>
                 <td>
-                    <button type="button">+</button>
+                    <button type="button" id="wahrnehmungPlus">+</button>
                 </td>
                 <td>
-                    <button type="button">-</button>
+                    <button type="button" id="wahrnehmungMinus">-</button>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td title="Intelligenz umfasst das geistige Potenzial einer Figur (nicht die Bildung – diese ist erlernt und dementsprechend eine Fertigkeit!). Zu beachten ist, dass viele Lebewesen im 26. Jahrhundert aufgrund der degenerativen Wirkung der Daa'murenkristalle recht niedrige Intelligenzwerte besitzen.">
                     Intelligenz:
                 </td>
                 <td id="intelligenzAnzeige">
                     0
                 </td>
                 <td>
-                    <button type="button">+</button>
+                    <button type="button" id="intelligenzPlus">+</button>
                 </td>
                 <td>
-                    <button type="button">-</button>
+                    <button type="button" id="intelligenzMinus">-</button>
                 </td>
             </tr>
             <tr>
-                <td>
+                <td id="Auftreten repräsentiert die Ausstrahlung, das Charisma und das Aussehen einer Figur (wobei ein Charakter mit einem hohen Wert in Auftreten nicht zwingend alle diese Eigenschaften besitzen muss!).">
                     Auftreten:
                 </td>
                 <td id="auftretenAnzeige">
                     0
                 </td>
                 <td>
-                    <button type="button">+</button>
+                    <button type="button" id="auftretenPlus">+</button>
                 </td>
                 <td>
-                    <button type="button">-</button>
+                    <button type="button" id="auftretenMinus">-</button>
                 </td>
             </tr>
         </table>
         <p>Verbleibende Attributspunkte: <span id="attPointsAnzeige">0</span></p>
+        <p id="footer"><i>Version 0.2 &copy; 2020 by Holger Ehrmann</i></p>
 
         <script type="text/javascript">
         if(typeof jQuery == "undefined") {
@@ -155,6 +157,29 @@
         var intelligenz;
         var auftreten;
         // Funktionen
+        // Erklärungen der Attribute mittels Mouseover (title wird angezeigt)
+        $( function() {
+            $( document ).tooltip();
+        } );
+
+        // rasseSwitch
+        function rasseSwitch() {
+            var rasse = document.getElementById("rasse").value;
+            if (rasse == "barbar") {
+                resetAttPoints(1);
+            }
+            else if (rasse == "guul") {
+                resetAttPoints(0);
+                auftreten -= 1;
+                document.getElementById("auftretenAnzeige").innerHTML = auftreten;
+            }
+        }
+        // kulturSwitch
+        var kultur = "barbar"
+        function kulturSwitch() {
+            kultur = document.getElementById("kultur").value;
+        }
+
         // Alle Attribute auf 0 setzen und missingAttPoints zur Verteilung gutschreiben
         function resetAttPoints(missingAttPoints) {
             staerke = 0;
@@ -180,6 +205,7 @@
         }
         resetAttPoints(1);
         attPointsRefresh();
+        // Stärke +/-
         document.getElementById("staerkePlus").onclick = function() {
             if(attPoints > 0) {
             attPoints = attPoints - 1;
@@ -193,6 +219,108 @@
             attPoints = attPoints + 1;
             staerke = staerke - 1;
             document.getElementById("staerkeAnzeige").innerHTML = staerke;
+            attPointsRefresh();
+            }
+        }
+        // Geschicklichkeit +/-
+        document.getElementById("geschicklichkeitPlus").onclick = function() {
+            if(attPoints > 0) {
+            attPoints = attPoints - 1;
+            geschicklichkeit = geschicklichkeit + 1;
+            document.getElementById("geschicklichkeitAnzeige").innerHTML = geschicklichkeit;
+            attPointsRefresh();
+            }
+        }
+        document.getElementById("geschicklichkeitMinus").onclick = function() {
+            if(geschicklichkeit > 0) {
+            attPoints = attPoints + 1;
+            geschicklichkeit = geschicklichkeit - 1;
+            document.getElementById("geschicklichkeitAnzeige").innerHTML = geschicklichkeit;
+            attPointsRefresh();
+            }
+        }
+        // Robustheit +/-
+        document.getElementById("robustheitPlus").onclick = function() {
+            if(attPoints > 0) {
+            attPoints = attPoints - 1;
+            robustheit = robustheit + 1;
+            document.getElementById("robustheitAnzeige").innerHTML = robustheit;
+            attPointsRefresh();
+            }
+        }
+        document.getElementById("robustheitMinus").onclick = function() {
+            if(robustheit > 0) {
+            attPoints = attPoints + 1;
+            robustheit = robustheit - 1;
+            document.getElementById("robustheitAnzeige").innerHTML = robustheit;
+            attPointsRefresh();
+            }
+        }
+        // Willenskraft +/-
+        document.getElementById("willenskraftPlus").onclick = function() {
+            if(attPoints > 0) {
+            attPoints = attPoints - 1;
+            willenskraft = willenskraft + 1;
+            document.getElementById("willenskraftAnzeige").innerHTML = willenskraft;
+            attPointsRefresh();
+            }
+        }
+        document.getElementById("willenskraftMinus").onclick = function() {
+            if(willenskraft > 0) {
+            attPoints = attPoints + 1;
+            willenskraft = willenskraft - 1;
+            document.getElementById("willenskraftAnzeige").innerHTML = willenskraft;
+            attPointsRefresh();
+            }
+        }
+        // Wahrnehmung +/-
+        document.getElementById("wahrnehmungPlus").onclick = function() {
+            if(attPoints > 0) {
+            attPoints = attPoints - 1;
+            wahrnehmung = wahrnehmung + 1;
+            document.getElementById("wahrnehmungAnzeige").innerHTML = wahrnehmung;
+            attPointsRefresh();
+            }
+        }
+        document.getElementById("wahrnehmungMinus").onclick = function() {
+            if(wahrnehmung > 0) {
+            attPoints = attPoints + 1;
+            wahrnehmung = wahrnehmung - 1;
+            document.getElementById("wahrnehmungAnzeige").innerHTML = wahrnehmung;
+            attPointsRefresh();
+            }
+        }
+        // Intelligenz +/-
+        document.getElementById("intelligenzPlus").onclick = function() {
+            if(attPoints > 0) {
+            attPoints = attPoints - 1;
+            intelligenz = intelligenz + 1;
+            document.getElementById("intelligenzAnzeige").innerHTML = intelligenz;
+            attPointsRefresh();
+            }
+        }
+        document.getElementById("intelligenzMinus").onclick = function() {
+            if(intelligenz > 0) {
+            attPoints = attPoints + 1;
+            intelligenz = intelligenz - 1;
+            document.getElementById("intelligenzAnzeige").innerHTML = intelligenz;
+            attPointsRefresh();
+            }
+        }
+        // Auftreten +/-
+        document.getElementById("auftretenPlus").onclick = function() {
+            if(attPoints > 0) {
+            attPoints = attPoints - 1;
+            auftreten = auftreten + 1;
+            document.getElementById("auftretenAnzeige").innerHTML = auftreten;
+            attPointsRefresh();
+            }
+        }
+        document.getElementById("auftretenMinus").onclick = function() {
+            if(auftreten > 0) {
+            attPoints = attPoints + 1;
+            auftreten = auftreten - 1;
+            document.getElementById("auftretenAnzeige").innerHTML = auftreten;
             attPointsRefresh();
             }
         }

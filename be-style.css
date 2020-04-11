@@ -1,34 +1,4 @@
-* {
-    box-sizing: border-box;
-  }
-
-.beschreibung {
-    width: 75%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-}
-
-.attLabel {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-  }
-
-.col25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-}
-
-.col75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+#footer {
+    font-size: 10;
+    vertical-align: bottom;
 }
