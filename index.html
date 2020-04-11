@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Kopfbereich -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Maddrax Game">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Holger Ehrmann">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="be-style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <title>Maddrax 3 - TBP</title>
+    </head>
+
+    <body>
+        <h1 class="title">Broken Earth</h1>
+        <p id="anzeigeText">Tuma sa feesa, Fremder! Comdo? Wie willst du in der dunklen Zukunft genannt werden?</p>
+        <input type="text" id="nameInput" required autofocus>
+        <input type="button" value="ay" id="ok">
+        <p id="hilfeText" style="display: none;">Bei Wudan, überlege dir gut wie du deine Fähigkeiten beschreibst!</p>
+        <hr>
+        <table>
+            <tr>
+                <td>
+                    Rasse:
+                </td>
+                <td>
+                    <select id="rasse" name="rasse">
+                        <option value="barbar">Barbar</option>
+                    </select>
+                </td>
+                <td>
+                    Kultur:
+                </td>
+                <td>
+                    <select id="kultur" name="kultur">
+                        <option value="wanderndesVolk">Wanderndes Volk</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Stärke:
+                </td>
+                <td id="staerkeAnzeige">
+                    0
+                </td>
+                <td>
+                    <button type="button" id="staerkePlus">+</button>
+                </td>
+                <td>
+                    <button type="button" id="staerkeMinus">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Geschicklichkeit:
+                </td>
+                <td id="geschicklichkeitAnzeige">
+                    0
+                </td>
+                <td>
+                    <button type="button" id="geschicklichkeitPlus">+</button>
+                </td>
+                <td>
+                    <button type="button" id="geschicklichkeitMinus">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Robustheit:
+                </td>
+                <td id="robustheitAnzeige">
+                    0
+                </td>
+                <td>
+                    <button type="button">+</button>
+                </td>
+                <td>
+                    <button type="button">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Willenskraft:
+                </td>
+                <td id="willenskraftAnzeige">
+                    0
+                </td>
+                <td>
+                    <button type="button">+</button>
+                </td>
+                <td>
+                    <button type="button">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Wahrnehmung:
+                </td>
+                <td id="wahrnehmungAnzeige">
+                    0
+                </td>
+                <td>
+                    <button type="button">+</button>
+                </td>
+                <td>
+                    <button type="button">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Intelligenz:
+                </td>
+                <td id="intelligenzAnzeige">
+                    0
+                </td>
+                <td>
+                    <button type="button">+</button>
+                </td>
+                <td>
+                    <button type="button">-</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Auftreten:
+                </td>
+                <td id="auftretenAnzeige">
+                    0
+                </td>
+                <td>
+                    <button type="button">+</button>
+                </td>
+                <td>
+                    <button type="button">-</button>
+                </td>
+            </tr>
+        </table>
+        <p>Verbleibende Attributspunkte: <span id="attPointsAnzeige">0</span></p>
+
+        <script type="text/javascript">
+        if(typeof jQuery == "undefined") {
+            alert("jQuery konnte nicht gefunden werden!");
+        }
+        // Variablen
+        var spielerName = "";
+        var attPoints = 1;
+        // Char-Attribute
+        var staerke;
+        var geschicklichkeit;
+        var robustheit;
+        var willenskraft;
+        var wahrnehmung;
+        var intelligenz;
+        var auftreten;
+        // Funktionen
+        // Alle Attribute auf 0 setzen und missingAttPoints zur Verteilung gutschreiben
+        function resetAttPoints(missingAttPoints) {
+            staerke = 0;
+            document.getElementById("staerkeAnzeige").innerHTML = staerke;
+            geschicklichkeit = 0;
+            document.getElementById("geschicklichkeitAnzeige").innerHTML = geschicklichkeit;
+            robustheit = 0;
+            document.getElementById("robustheitAnzeige").innerHTML = robustheit;
+            willenskraft = 0;
+            document.getElementById("willenskraftAnzeige").innerHTML = willenskraft;
+            wahrnehmung = 0;
+            document.getElementById("wahrnehmungAnzeige").innerHTML = wahrnehmung;
+            intelligenz = 0;
+            document.getElementById("intelligenzAnzeige").innerHTML = intelligenz;
+            auftreten = 0;
+            document.getElementById("auftretenAnzeige").innerHTML = auftreten;
+            attPoints = missingAttPoints;
+            attPointsRefresh();
+        }
+        // Refresh der verbleibenden attPoints
+        function attPointsRefresh() {
+            document.getElementById("attPointsAnzeige").innerHTML = attPoints;
+        }
+        resetAttPoints(1);
+        attPointsRefresh();
+        document.getElementById("staerkePlus").onclick = function() {
+            if(attPoints > 0) {
+            attPoints = attPoints - 1;
+            staerke = staerke + 1;
+            document.getElementById("staerkeAnzeige").innerHTML = staerke;
+            attPointsRefresh();
+            }
+        }
+        document.getElementById("staerkeMinus").onclick = function() {
+            if(staerke > 0) {
+            attPoints = attPoints + 1;
+            staerke = staerke - 1;
+            document.getElementById("staerkeAnzeige").innerHTML = staerke;
+            attPointsRefresh();
+            }
+        }
+        document.getElementById("ok").onclick = function() {
+            spielerName = document.getElementById("nameInput").value;
+            document.getElementById("nameInput").style.display = "none";
+            document.getElementById("ok").style.display = "none";
+            document.getElementById("anzeigeText").innerHTML = "Tenk fa tuu, " + spielerName + "!";
+            document.getElementById("hilfeText").style.display = "inline";
+            document.getElementById("charTable").style.display = "inline";
+        }
+        
+        </script>
+    </body>
+</html>
