@@ -14,21 +14,21 @@ var willenskraft;
 var wahrnehmung;
 var intelligenz;
 var auftreten;
+// Fertigkeiten
+var athletik;
 // Funktionen
-// Erklärungen der Attribute mittels Mouseover (title wird angezeigt)
-$( function() {
-    $( document ).tooltip();
-} );
+
 // Changelog
 $( function() {
     $( "#changelog" ).dialog({
+        closeText: "Schließen",
         autoOpen: false,
         show: {
-            effect: "blind",
+            effect: "drop",
             duration: 1000
         },
         hide: {
-            effect: "blind",
+            effect: "drop",
             duration: 1000
         }
     });
@@ -37,8 +37,19 @@ $( function() {
         $( "#changelog" ).dialog( "open" );
     });
 } );
-
-//Attribute speichern
+// Erklärungen der Attribute mittels Mouseover (title wird angezeigt)
+//$( function() {
+//    $( document ).tooltip();
+//} );
+// Fertigkeiten berechnen
+function fertBerechnen() {
+    document.getElementById("tabFert").style.display = "block";
+    athletik = staerke + geschicklichkeit + robustheit;
+    document.getElementById("athletikAnzeige").innerHTML = athletik;
+    beruf = geschicklichkeit + intelligenz + auftreten;
+    document.getElementById("berufAnzeige").innerHTML = beruf;
+}
+// Attribute speichern
 document.getElementById("speichern").onclick = function() {
     if (attPoints == 0) {
         document.getElementById("speichern").style.display = "none";
@@ -61,6 +72,7 @@ document.getElementById("speichern").onclick = function() {
         }
         document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
         document.getElementById("verblFertPointsAnzeige").style.display = "block";
+        fertBerechnen();
     }
 }
 
@@ -234,5 +246,5 @@ document.getElementById("ok").onclick = function() {
     document.getElementById("hilfeText").style.display = "inline";
     document.getElementById("attTable").style.display = "inline";
     document.getElementById("speichern").style.display = "block";
-    document.getElementById("verblAttPointsAnezige").style.display = "block";
+    document.getElementById("verblAttPointsAnzeige").style.display = "block";
 }

@@ -8,17 +8,22 @@
         <meta name="author" content="Holger Ehrmann">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="be-style.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <!-- JQuery einbinden -->
+        <script src="jquery-3.5.0.min.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
         <title>Maddrax Rollenspiel</title>
     </head>
 
     <body>
         <h1 class="title">Maddrax-Rollenspiel</h1>
-        <p id="anzeigeText">Tuma sa feesa, Fremder! Comdo? Wie willst du in der dunklen Zukunft genannt werden?</p><button id="changelogButton">Changelog</button>
+        <p id="anzeigeText">Tuma sa feesa, Fremder! Comdo? Wie willst du in der dunklen Zukunft genannt werden?</p>
+        <div id="changelogButtonAlign"><button id="changelogButton">Changelog</button></div>
         <div id="changelog" title="Changelog">
-            <p>- Initiale Version</p>
+            <p><b>Version 0.1</b><br>
+            - Initiale Version</p>
+            <p><b>Version 0.2</b><br>
+            - Attributpunkte vergeben</p>
         </div>
         <input type="text" id="nameInput" required autofocus>
         <input type="button" value="Ay" id="ok">
@@ -144,7 +149,8 @@
                 </td>
             </tr>
         </table>
-        <table>
+        <!-- Fertigkeitstabelle -->
+        <table id="tabFert" style="display: none;">
             <tr>
                 <td title="Athletik beschreibt das Talent des Charakters zu klettern, schwimmen und laufen sowie seine allgemeine körperliche Fitness. Zudem hilft ein hoher Athletikwert, Angriffe zu vermeiden. (ST, GE, RO)">
                     Athletik
@@ -152,12 +158,30 @@
                 <td id="athletikAnzeige">
                     0
                 </td>
+                <td>
+                    <button>+</button>
+                </td>
+                <td>
+                    <button>-</button>
+                </td>
+                <td title="Für jeden Punkt in dieser Fertigkeit hat der Charakter einen Beruf erlernt. Proben für den Erstberuf werden gegen den vollen FW gewürfelt, für den Zweitberuf gegen (FW-1), für den Drittberuf gegen (FW2). (GE, IN, AU)">
+                    Beruf
+                </td>
+                <td id="berufAnzeige">
+                    0
+                </td>
+                <td>
+                    <button>+</button>
+                </td>
+                <td>
+                    <button>-</button>
+                </td>
             </tr>
         </table>
         <p id="verblAttPointsAnzeige" style="display: none;">Verbleibende Attributspunkte: <span id="attPointsAnzeige">0</span></p>
         <p id="verblFertPointsAnzeige" style="display: none;">Verbleibende Fertigkeitspunkte: <span id="fertPointsAnzeige">0</span></p>
         <button id="speichern" style="display: none;">Eja beviwo!</button>
-        <p id="footer"><i>Version 0.2 &copy; 2020 by McNamara</i></p>
+        <p id="footer"><i>Version 0.2 &copy; 2020 by McNamara basierend auf den Regeln des MX-Rollenspiels von Thomas Biskup</i></p>
 
         <script src="funktionen.js"></script>
     </body>

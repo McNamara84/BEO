@@ -2,3 +2,9 @@
     font-size: 10;
     vertical-align: bottom;
 }
+#changelogButtonAlign {
+    text-align: right;
+}
+.ui-draggable, .ui-droppable {
+	background-position: top;
+}
