@@ -1,2 +1,2 @@
-# BROKEN EARTH
+# MADDRAX Rollenspiel Tool
  Ein Maddrax-Rollenspiel
