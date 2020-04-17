@@ -24,11 +24,11 @@ $( function() {
         closeText: "Schließen",
         autoOpen: false,
         show: {
-            effect: "drop",
+            effect: "size",
             duration: 1000
         },
         hide: {
-            effect: "drop",
+            effect: "size",
             duration: 1000
         }
     });
@@ -41,6 +41,15 @@ $( function() {
 //$( function() {
 //    $( document ).tooltip();
 //} );
+
+// Ay-Enter
+var input = document.getElementById("nameInput");
+input.addEventListener("keyup", function(event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("ok").click();
+    }
+});
 // Fertigkeiten berechnen
 function fertBerechnen() {
     document.getElementById("tabFert").style.display = "block";
@@ -240,11 +249,13 @@ document.getElementById("auftretenMinus").onclick = function() {
 }
 document.getElementById("ok").onclick = function() {
     spielerName = document.getElementById("nameInput").value;
-    document.getElementById("nameInput").style.display = "none";
-    document.getElementById("ok").style.display = "none";
-    document.getElementById("anzeigeText").innerHTML = "Tenk fa tuu, " + spielerName + "!";
-    document.getElementById("hilfeText").style.display = "inline";
-    document.getElementById("attTable").style.display = "inline";
-    document.getElementById("speichern").style.display = "block";
-    document.getElementById("verblAttPointsAnzeige").style.display = "block";
+    if (spielerName !== "" && spielerName !== " " && spielerName !== "   ") {
+        document.getElementById("nameInput").style.display = "none";
+        document.getElementById("ok").style.display = "none";
+        document.getElementById("anzeigeText").innerHTML = "Tenk fa tuu, " + spielerName + "!";
+        document.getElementById("hilfeText").style.display = "inline";
+        document.getElementById("attTable").style.display = "inline";
+        document.getElementById("speichern").style.display = "block";
+        document.getElementById("verblAttPointsAnzeige").style.display = "block";
+    }
 }

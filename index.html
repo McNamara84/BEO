@@ -24,9 +24,11 @@
             - Initiale Version</p>
             <p><b>Version 0.2</b><br>
             - Attributpunkte vergeben</p>
+            <p><b>Version 0.3</b><br>
+                - ???</p>
         </div>
         <input type="text" id="nameInput" required autofocus>
-        <input type="button" value="Ay" id="ok">
+        <input type="button" value="Ay" id="ok" type="button">
         <p id="hilfeText" style="display: none;">Bei Wudan, überlege dir gut wie du deine Fähigkeiten beschreibst!</p>
         <hr>
         <table id="attTable" style="display: none;">
@@ -150,7 +152,7 @@
             </tr>
         </table>
         <!-- Fertigkeitstabelle -->
-        <table id="tabFert" style="display: none;">
+        <table id="tabFert">
             <tr>
                 <td title="Athletik beschreibt das Talent des Charakters zu klettern, schwimmen und laufen sowie seine allgemeine körperliche Fitness. Zudem hilft ein hoher Athletikwert, Angriffe zu vermeiden. (ST, GE, RO)">
                     Athletik
@@ -164,6 +166,8 @@
                 <td>
                     <button>-</button>
                 </td>
+            </tr>
+            <tr>
                 <td title="Für jeden Punkt in dieser Fertigkeit hat der Charakter einen Beruf erlernt. Proben für den Erstberuf werden gegen den vollen FW gewürfelt, für den Zweitberuf gegen (FW-1), für den Drittberuf gegen (FW2). (GE, IN, AU)">
                     Beruf
                 </td>
@@ -177,11 +181,53 @@
                     <button>-</button>
                 </td>
             </tr>
+            <tr>
+                <td title="Bildung beschreibt die zivilisierte Ausbildung eines Charakters. Bestimmte technische Gegenstände können nur mit einem Mindestwert an Bildung verwendet werden. (IN, WA)">
+                    Bildung
+                </td>
+                <td id="bildungAnzeige">
+                    0
+                </td>
+                <td>
+                    <button>+</button>
+                </td>
+                <td>
+                    <button>-</button>
+                </td>
+            </tr>
+            <tr>
+                <td title="Diebeskunst umfasst alle diebischen Talente wie Taschendiebstahl, das Öffnen von Fenstern und Türen mit Dietrichen, das Schätzen von Diebesgut oder das Erklettern von Hauswänden. (GE, WA)">
+                    Diebeskunst
+                </td>
+                <td id="diebeskunstAnzeige">
+                    0
+                </td>
+                <td>
+                    <button>+</button>
+                </td>
+                <td>
+                    <button>-</button>
+                </td>
+            </tr>
+            <tr>
+                <td title="Fahren bezieht sich sowohl auf das Lenken mit tierischer Kraft getriebener Fahrzeuge als auch das Fahren technischer Fortbewegungsmittel wie Autos oder EWATs. (GE, WA)">
+                    Fahren
+                </td>
+                <td id="fahrenAnzeige">
+                    0
+                </td>
+                <td>
+                    <button>+</button>
+                </td>
+                <td>
+                    <button>-</button>
+                </td>
+            </tr>
         </table>
         <p id="verblAttPointsAnzeige" style="display: none;">Verbleibende Attributspunkte: <span id="attPointsAnzeige">0</span></p>
         <p id="verblFertPointsAnzeige" style="display: none;">Verbleibende Fertigkeitspunkte: <span id="fertPointsAnzeige">0</span></p>
         <button id="speichern" style="display: none;">Eja beviwo!</button>
-        <p id="footer"><i>Version 0.2 &copy; 2020 by McNamara basierend auf den Regeln des MX-Rollenspiels von Thomas Biskup</i></p>
+        <p id="footer"><i>Version 0.3 &copy; 2020 by McNamara basierend auf den Regeln des MX-Rollenspiels von Thomas Biskup</i></p>
 
         <script src="funktionen.js"></script>
     </body>
