@@ -428,10 +428,10 @@ function fertBerechnen() {
     bildung = intelligenz + wahrnehmung;
     document.getElementById("bildungAnzeige").innerHTML = bildung;
     // Diebeskunst
-    diebeskunst = intelligenz + wahrnehmung;
+    diebeskunst = geschicklichkeit + wahrnehmung;
     document.getElementById("diebeskunstAnzeige").innerHTML = bildung;
     // Fahren
-    fahren = intelligenz + wahrnehmung;
+    fahren = geschicklichkeit + wahrnehmung;
     document.getElementById("fahrenAnzeige").innerHTML = bildung;
     // Fernkampf
     fernkampf = intelligenz + wahrnehmung;
