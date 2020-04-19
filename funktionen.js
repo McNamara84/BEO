@@ -252,6 +252,159 @@ document.getElementById("intuitionMinus").onclick = function() {
         document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
     }
 }
+// Kunde
+document.getElementById("kundePlus").onclick = function() {
+    if (fertPoints > 0) {
+        kunde++;
+        document.getElementById("kundeAnzeige").innerHTML = kunde;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("kundeMinus").onclick = function() {
+    if (kunde > 0) {
+        kunde--;
+        document.getElementById("kundeAnzeige").innerHTML = kunde;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Nahkampf
+document.getElementById("nahkampfPlus").onclick = function() {
+    if (fertPoints > 0) {
+        nahkampf++;
+        document.getElementById("nahkampfAnzeige").innerHTML = nahkampf;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("nahkampfMinus").onclick = function() {
+    if (nahkampf > 0) {
+        nahkampf--;
+        document.getElementById("nahkampfAnzeige").innerHTML = nahkampf;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Pilot
+document.getElementById("pilotPlus").onclick = function() {
+    if (fertPoints > 0) {
+        pilot++;
+        document.getElementById("pilotAnzeige").innerHTML = pilot;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("pilotMinus").onclick = function() {
+    if (pilot > 0) {
+        pilot--;
+        document.getElementById("pilotAnzeige").innerHTML = pilot;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Reiten
+document.getElementById("reitenPlus").onclick = function() {
+    if (fertPoints > 0) {
+        reiten++;
+        document.getElementById("reitenAnzeige").innerHTML = reiten;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("reitenMinus").onclick = function() {
+    if (reiten > 0) {
+        reiten--;
+        document.getElementById("reitenAnzeige").innerHTML = reiten;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Sprachen
+document.getElementById("sprachenPlus").onclick = function() {
+    if (fertPoints > 0) {
+        sprachen++;
+        document.getElementById("sprachenAnzeige").innerHTML = sprachen;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("sprachenMinus").onclick = function() {
+    if (sprachen > 0) {
+        sprachen--;
+        document.getElementById("sprachenAnzeige").innerHTML = sprachen;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Techniker
+document.getElementById("technikerPlus").onclick = function() {
+    if (fertPoints > 0) {
+        techniker++;
+        document.getElementById("technikerAnzeige").innerHTML = techniker;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("technikerMinus").onclick = function() {
+    if (techniker > 0) {
+        techniker--;
+        document.getElementById("technikerAnzeige").innerHTML = techniker;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Unterhalten
+document.getElementById("unterhaltenPlus").onclick = function() {
+    if (fertPoints > 0) {
+        unterhalten++;
+        document.getElementById("unterhaltenAnzeige").innerHTML = unterhalten;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("unterhaltenMinus").onclick = function() {
+    if (unterhalten > 0) {
+        unterhalten--;
+        document.getElementById("unterhaltenAnzeige").innerHTML = unterhalten;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Überleben
+document.getElementById("ueberlebenPlus").onclick = function() {
+    if (fertPoints > 0) {
+        ueberleben++;
+        document.getElementById("ueberlebenAnzeige").innerHTML = ueberleben;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("ueberlebenMinus").onclick = function() {
+    if (ueberleben > 0) {
+        ueberleben--;
+        document.getElementById("ueberlebenAnzeige").innerHTML = ueberleben;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Wissenschaftler
+document.getElementById("wissenschaftlerPlus").onclick = function() {
+    if (fertPoints > 0) {
+        wissenschaftler++;
+        document.getElementById("wissenschaftlerAnzeige").innerHTML = wissenschaftler;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("wissenschaftlerMinus").onclick = function() {
+    if (wissenschaftler > 0) {
+        wissenschaftler--;
+        document.getElementById("wissenschaftlerAnzeige").innerHTML = wissenschaftler;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
 
 // Ay-Enter
 var input = document.getElementById("nameInput");
@@ -276,28 +429,55 @@ function fertBerechnen() {
     document.getElementById("bildungAnzeige").innerHTML = bildung;
     // Diebeskunst
     diebeskunst = intelligenz + wahrnehmung;
-    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    document.getElementById("diebeskunstAnzeige").innerHTML = bildung;
     // Fahren
     fahren = intelligenz + wahrnehmung;
-    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    document.getElementById("fahrenAnzeige").innerHTML = bildung;
     // Fernkampf
     fernkampf = intelligenz + wahrnehmung;
-    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    document.getElementById("fernkampfAnzeige").innerHTML = bildung;
     // Feuerwaffen
     feuerwaffen = intelligenz + wahrnehmung;
-    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    document.getElementById("feuerwaffenAnzeige").innerHTML = bildung;
     // Handeln
     handeln = intelligenz + wahrnehmung;
-    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    document.getElementById("handelnAnzeige").innerHTML = bildung;
     // Heiler
     heiler = intelligenz + wahrnehmung;
-    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    document.getElementById("heilerAnzeige").innerHTML = bildung;
     // Heimlichkeit
     heimlichkeit = intelligenz + wahrnehmung;
-    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    document.getElementById("heimlichkeitAnzeige").innerHTML = bildung;
     // Intuition
     intuition = intelligenz + wahrnehmung;
-    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    document.getElementById("intuitionAnzeige").innerHTML = bildung;
+    // Kunde
+    kunde = intelligenz + wahrnehmung;
+    document.getElementById("kundeAnzeige").innerHTML = bildung;
+    // Nahkampf
+    nahkampf = intelligenz + wahrnehmung;
+    document.getElementById("nahkampfAnzeige").innerHTML = bildung;
+    // Pilot
+    pilot = intelligenz + wahrnehmung;
+    document.getElementById("pilotAnzeige").innerHTML = bildung;
+    // Reiten
+    reiten = intelligenz + wahrnehmung;
+    document.getElementById("reitenAnzeige").innerHTML = bildung;
+    // Sprachen
+    sprachen = intelligenz + wahrnehmung;
+    document.getElementById("sprachenAnzeige").innerHTML = bildung;
+    // Techniker
+    techniker = intelligenz + wahrnehmung;
+    document.getElementById("technikerAnzeige").innerHTML = bildung;
+    // Unterhalten
+    unterhalten = intelligenz + wahrnehmung;
+    document.getElementById("unterhaltenAnzeige").innerHTML = bildung;
+    // Überleben
+    ueberleben = intelligenz + wahrnehmung;
+    document.getElementById("ueberlebenAnzeige").innerHTML = bildung;
+    // Wissenschaftler
+    wissenschaftler = intelligenz + wahrnehmung;
+    document.getElementById("wissenschaftlerAnzeige").innerHTML = bildung;
 }
 // Attribute speichern
 document.getElementById("speichern").onclick = function() {
