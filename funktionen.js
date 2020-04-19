@@ -16,8 +16,28 @@ var intelligenz;
 var auftreten;
 // Fertigkeiten
 var athletik;
-// Funktionen
+var beruf;
+var bildung;
+var diebeskunst;
+var fahren;
+var fernkampf;
+var feuerwaffen;
+var handeln;
+var heiler;
+var heimlichkeit;
+var intuition;
+var kunde;
+var nahkampf;
+var pilot;
+var reiten;
+var sprachen;
+var techniker;
+var unterhalten;
+var ueberleben;
+var wissenschaftler;
 
+// Funktionen
+// JQuery
 // Changelog
 $( function() {
     $( "#changelog" ).dialog({
@@ -42,6 +62,197 @@ $( function() {
 //    $( document ).tooltip();
 //} );
 
+//Normales JavaScript
+
+// Fertigkeiten +/-
+// Athletik
+document.getElementById("athletikPlus").onclick = function() {
+    if (fertPoints > 0) {
+        athletik++;
+        document.getElementById("athletikAnzeige").innerHTML = athletik;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("athletikMinus").onclick = function() {
+    if (athletik > 0) {
+        athletik--;
+        document.getElementById("athletikAnzeige").innerHTML = athletik;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Beruf
+document.getElementById("berufPlus").onclick = function() {
+    if (fertPoints > 0) {
+        beruf++;
+        document.getElementById("berufAnzeige").innerHTML = beruf;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("berufMinus").onclick = function() {
+    if (beruf > 0) {
+        beruf--;
+        document.getElementById("berufAnzeige").innerHTML = beruf;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Bildung
+document.getElementById("bildungPlus").onclick = function() {
+    if (fertPoints > 0) {
+        bildung++;
+        document.getElementById("bildungAnzeige").innerHTML = bildung;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("bildungMinus").onclick = function() {
+    if (bildung > 0) {
+        bildung--;
+        document.getElementById("bildungAnzeige").innerHTML = bildung;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Diebeskunst
+document.getElementById("diebeskunstPlus").onclick = function() {
+    if (fertPoints > 0) {
+        diebeskunst++;
+        document.getElementById("diebeskunstAnzeige").innerHTML = diebeskunst;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("diebeskunstMinus").onclick = function() {
+    if (diebeskunst > 0) {
+        diebeskunst--;
+        document.getElementById("diebeskunstAnzeige").innerHTML = diebeskunst;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Fahren
+document.getElementById("fahrenPlus").onclick = function() {
+    if (fertPoints > 0) {
+        fahren++;
+        document.getElementById("fahrenAnzeige").innerHTML = fahren;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("fahrenMinus").onclick = function() {
+    if (fahren > 0) {
+        fahren--;
+        document.getElementById("fahrenAnzeige").innerHTML = fahren;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Fernkampf
+document.getElementById("fernkampfPlus").onclick = function() {
+    if (fertPoints > 0) {
+        fernkampf++;
+        document.getElementById("fernkampfAnzeige").innerHTML = fernkampf;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("fernkampfMinus").onclick = function() {
+    if (fernkampf > 0) {
+        fernkampf--;
+        document.getElementById("fernkampfAnzeige").innerHTML = fernkampf;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Feuerwaffen
+document.getElementById("feuerwaffenPlus").onclick = function() {
+    if (fertPoints > 0) {
+        feuerwaffen++;
+        document.getElementById("feuerwaffenAnzeige").innerHTML = feuerwaffen;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("feuerwaffenMinus").onclick = function() {
+    if (feuerwaffen > 0) {
+        feuerwaffen--;
+        document.getElementById("feuerwaffenAnzeige").innerHTML = feuerwaffen;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Handeln
+document.getElementById("handelnPlus").onclick = function() {
+    if (fertPoints > 0) {
+        handeln++;
+        document.getElementById("handelnAnzeige").innerHTML = handeln;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("handelnMinus").onclick = function() {
+    if (handeln > 0) {
+        handeln--;
+        document.getElementById("handelnAnzeige").innerHTML = handeln;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Heiler
+document.getElementById("heilerPlus").onclick = function() {
+    if (fertPoints > 0) {
+        heiler++;
+        document.getElementById("heilerAnzeige").innerHTML = heiler;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("heilerMinus").onclick = function() {
+    if (heiler > 0) {
+        heiler--;
+        document.getElementById("heilerAnzeige").innerHTML = heiler;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Heimlichkeit
+document.getElementById("heimlichkeitPlus").onclick = function() {
+    if (fertPoints > 0) {
+        heimlichkeit++;
+        document.getElementById("heimlichkeitAnzeige").innerHTML = heimlichkeit;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("heimlichkeitMinus").onclick = function() {
+    if (heimlichkeit > 0) {
+        heimlichkeit--;
+        document.getElementById("heimlichkeitAnzeige").innerHTML = heimlichkeit;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+// Intuition
+document.getElementById("intuitionPlus").onclick = function() {
+    if (fertPoints > 0) {
+        intuition++;
+        document.getElementById("intuitionAnzeige").innerHTML = intuition;
+        fertPoints--;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+document.getElementById("intuitionMinus").onclick = function() {
+    if (intuition > 0) {
+        intuition--;
+        document.getElementById("intuitionAnzeige").innerHTML = intuition;
+        fertPoints++;
+        document.getElementById("fertPointsAnzeige").innerHTML = fertPoints;
+    }
+}
+
 // Ay-Enter
 var input = document.getElementById("nameInput");
 input.addEventListener("keyup", function(event) {
@@ -52,11 +263,41 @@ input.addEventListener("keyup", function(event) {
 });
 // Fertigkeiten berechnen
 function fertBerechnen() {
+    // Tabelle mit Fertigkeitspunkten sichtbar machen
     document.getElementById("tabFert").style.display = "block";
+    // Athletik
     athletik = staerke + geschicklichkeit + robustheit;
     document.getElementById("athletikAnzeige").innerHTML = athletik;
+    // Beruf
     beruf = geschicklichkeit + intelligenz + auftreten;
     document.getElementById("berufAnzeige").innerHTML = beruf;
+    // Bildung
+    bildung = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    // Diebeskunst
+    diebeskunst = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    // Fahren
+    fahren = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    // Fernkampf
+    fernkampf = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    // Feuerwaffen
+    feuerwaffen = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    // Handeln
+    handeln = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    // Heiler
+    heiler = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    // Heimlichkeit
+    heimlichkeit = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
+    // Intuition
+    intuition = intelligenz + wahrnehmung;
+    document.getElementById("bildungAnzeige").innerHTML = bildung;
 }
 // Attribute speichern
 document.getElementById("speichern").onclick = function() {
