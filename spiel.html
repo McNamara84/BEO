@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Kopfbereich -->
+        <meta charset="UTF-8">
+        <meta name="description" content="Maddrax Game">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="Holger Ehrmann">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="be-style.css">
+        <!-- JQuery einbinden -->
+        <script src="jquery-3.5.0.min.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+        <title>Maddrax Rollenspiel</title>
+    </head>
+    <body onload="loadPoints()">
+        <!-- funktionen.js bleibt weiterhin eingebunden -->
+        <script src="funktionen.js"></script>
+        <!-- Tabelle mit Attributen -->
+        <table>
+            <tr>
+                <td>
+                    <table style="background-color: antiquewhite;">
+                        <tr>
+                            <th colspan="2" style="text-align:center;vertical-align:top" id="spielerName">Charaktername</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2" style="text-align:center;vertical-align:top" id="SpielerBild"><img src="grafiken/barbar.jpg" alt="Das bist du!" width="75%"></th>
+                        </tr>
+                        <tr>
+                            <td>Rasse</td>
+                            <td id="SpielerRasse">Wert</td>
+                        </tr>
+                        <tr>
+                            <td>Kultur</td>
+                            <td id="spielerKultur">Wert</td>
+                        </tr>
+                        <tr>
+                            <td>Stärke</td>
+                            <td id="curStaerke">Wert</td>
+                        </tr>
+                        <tr>
+                            <td>Geschicklichkeit</td>
+                            <td id="curGeschicklichkeit">Wert</td>
+                        </tr>
+                        <tr>
+                            <td>Robustheit</td>
+                            <td id="curRobustheit">Wert</td>
+                        </tr>
+                        <tr>
+                            <td>Willenskraft</td>
+                            <td id="curWillenskraft">Wert</td>
+                        </tr>
+                        <tr>
+                            <td>Wahrnehmung</td>
+                            <td id="curWahrnehmung">Wert</td>
+                        </tr>
+                        <tr>
+                            <td>Intelligenz</td>
+                            <td id="curIntelligenz">Wert</td>
+                        </tr>
+                        <tr>
+                            <td>Auftreten</td>
+                            <td id="curAuftreten">Wert</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    Test
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

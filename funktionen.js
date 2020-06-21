@@ -485,6 +485,7 @@ document.getElementById("speichern").onclick = function() {
         document.getElementById("speichern").style.display = "none";
         document.getElementById("attTable").style.display = "none";
         document.getElementById("verblAttPointsAnzeige").style.display = "none";
+        document.getElementById("los").style.display = "block";
         if (niveau == 0) {
             fertPoints = 10;
         }
@@ -504,24 +505,26 @@ document.getElementById("speichern").onclick = function() {
         document.getElementById("verblFertPointsAnzeige").style.display = "block";
         fertBerechnen();
     }
+    else {
+        alert("Fertigkeitspunkte sind noch nicht alle vergeben!");
+    }
 }
 
 // rasseSwitch
 function rasseSwitch() {
     var rasse = document.getElementById("rasse").value;
-    if (rasse == "barbar") {
+    if (rasse == "Barbar") {
         resetAttPoints(1);
     }
-    else if (rasse == "guul") {
+    else if (rasse == "Guul") {
         resetAttPoints(0);
         auftreten -= 1;
         document.getElementById("auftretenAnzeige").innerHTML = auftreten;
     }
 }
 // kulturSwitch
-var kultur = "barbar"
 function kulturSwitch() {
-    kultur = document.getElementById("kultur").value;
+    var kultur = document.getElementById("kultur").value;
 }
 
 // Alle Attribute auf 0 setzen und missingAttPoints zur Verteilung gutschreiben
@@ -679,4 +682,46 @@ document.getElementById("ok").onclick = function() {
         document.getElementById("speichern").style.display = "block";
         document.getElementById("verblAttPointsAnzeige").style.display = "block";
     }
+}
+// Los geht das Spiel! Alle Werte speichern (später mal in eine Datenbank) und neue Seite spiel.html laden
+document.getElementById("los").onclick = function() {
+    if (fertPoints == 0) {
+        localStorage['spielerName'] = spielerName;
+        localStorage['rasse'] = rasse.value;
+        localStorage['kultur'] = kultur.value;
+        localStorage['staerke'] = staerke;
+        localStorage['geschicklichkeit'] = geschicklichkeit;
+        localStorage['willenskraft'] = willenskraft;
+        localStorage['robustheit'] = robustheit;
+        localStorage['wahrnehmung'] = wahrnehmung;
+        localStorage['intelligenz'] = intelligenz;
+        localStorage['auftreten'] = auftreten;
+        window.location.href='spiel.html';
+    } else {
+        alert("Noch nicht alle Fertigkeitspunkte vergeben!");
+    }
+}
+// Punkte laden
+function loadPoints() {
+    var spielerName = localStorage['spielerName'];
+    document.getElementById("spielerName").innerHTML = spielerName;
+    var rasse = localStorage['rasse'];
+    document.getElementById("SpielerRasse").innerHTML = rasse;
+    var kultur = localStorage['kultur'];
+    document.getElementById("spielerKultur").innerHTML = kultur;
+    // Attributspunkte
+    var staerke = localStorage['staerke'];
+    document.getElementById("curStaerke").innerHTML = staerke;
+    var geschicklichkeit = localStorage['geschicklichkeit'];
+    document.getElementById("curGeschicklichkeit").innerHTML = geschicklichkeit;
+    var robustheit = localStorage['robustheit'];
+    document.getElementById("curRobustheit").innerHTML = robustheit;
+    var willenskraft = localStorage['willenskraft'];
+    document.getElementById("curWillenskraft").innerHTML = willenskraft;
+    var wahrnehmung = localStorage['wahrnehmung'];
+    document.getElementById("curWahrnehmung").innerHTML = wahrnehmung;
+    var intelligenz = localStorage['intelligenz'];
+    document.getElementById("curIntelligenz").innerHTML = intelligenz;
+    var auftreten = localStorage['auftreten'];
+    document.getElementById("curAuftreten").innerHTML = auftreten;
 }

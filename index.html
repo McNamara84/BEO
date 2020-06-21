@@ -33,7 +33,10 @@
             <p><b>Version 0.4</b><br>
                 - Schriftgröße allgemein vergrößert<br>
                 - Schriftgröße im Changelog verkleinert für mehr Platz<br>
-                - ...............
+                - Button für Charaktererschaffung hinzugefügt<br>
+                - Warnung bei unverteilten Attributspunkten<br>
+                - Warnung bei unverteilten Fertigkeitspunkten<br>
+                - Grafik für Barbaren eingefügt
             </p>
         </div>
         <input type="text" id="nameInput" required autofocus>
@@ -47,8 +50,8 @@
                 </td>
                 <td>
                     <select id="rasse" name="rasse" onchange="rasseSwitch()">
-                        <option value="barbar">Barbar</option>
-                        <option value="guul">Guul</option>
+                        <option value="Barbar">Barbar</option>
+                        <option value="Guul">Guul</option>
                     </select>
                 </td>
                 <td>
@@ -56,8 +59,8 @@
                 </td>
                 <td>
                     <select id="kultur" name="kultur">
-                        <option value="wanderndesVolk">Wanderndes Volk</option>
-                        <option value="volkDer13Inseln">Volk der Dreizehn Inseln</option>
+                        <option value="Wanderndes Volk">Wanderndes Volk</option>
+                        <option value="Volk der Dreizehn Inseln">Volk der Dreizehn Inseln</option>
                     </select>
                 </td>
             </tr>
@@ -446,7 +449,8 @@
         <p id="verblAttPointsAnzeige" style="display: none;">Verbleibende Attributspunkte: <span id="attPointsAnzeige">0</span></p>
         <p id="verblFertPointsAnzeige" style="display: none;">Verbleibende Fertigkeitspunkte: <span id="fertPointsAnzeige">0</span></p>
         <button id="speichern" style="display: none;">Eja beviwo!</button>
-        <p id="footer"><i>Version 0.3 &copy; 2020 by McNamara basierend auf den Regeln des MX-Rollenspiels von Thomas Biskup</i></p>
+        <button id="los" style="display: none;">Glooris de disuu!</button>
+        <p id="footer"><i>Version 0.4 &copy; 2020 by McNamara basierend auf den Regeln des MX-Rollenspiels von Thomas Biskup</i></p>
 
         <script src="funktionen.js"></script>
     </body>
