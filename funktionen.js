@@ -35,6 +35,7 @@ var techniker;
 var unterhalten;
 var ueberleben;
 var wissenschaftler;
+var neuerSpieler = true;
 
 // Funktionen
 // JQuery
@@ -686,42 +687,23 @@ document.getElementById("ok").onclick = function() {
 // Los geht das Spiel! Alle Werte speichern (später mal in eine Datenbank) und neue Seite spiel.html laden
 document.getElementById("los").onclick = function() {
     if (fertPoints == 0) {
-        localStorage['spielerName'] = spielerName;
-        localStorage['rasse'] = rasse.value;
-        localStorage['kultur'] = kultur.value;
-        localStorage['staerke'] = staerke;
-        localStorage['geschicklichkeit'] = geschicklichkeit;
-        localStorage['willenskraft'] = willenskraft;
-        localStorage['robustheit'] = robustheit;
-        localStorage['wahrnehmung'] = wahrnehmung;
-        localStorage['intelligenz'] = intelligenz;
-        localStorage['auftreten'] = auftreten;
+        savePoints();
         window.location.href='spiel.html';
     } else {
         alert("Noch nicht alle Fertigkeitspunkte vergeben!");
     }
 }
 // Punkte laden
-function loadPoints() {
-    var spielerName = localStorage['spielerName'];
-    document.getElementById("spielerName").innerHTML = spielerName;
-    var rasse = localStorage['rasse'];
-    document.getElementById("SpielerRasse").innerHTML = rasse;
-    var kultur = localStorage['kultur'];
-    document.getElementById("spielerKultur").innerHTML = kultur;
-    // Attributspunkte
-    var staerke = localStorage['staerke'];
-    document.getElementById("curStaerke").innerHTML = staerke;
-    var geschicklichkeit = localStorage['geschicklichkeit'];
-    document.getElementById("curGeschicklichkeit").innerHTML = geschicklichkeit;
-    var robustheit = localStorage['robustheit'];
-    document.getElementById("curRobustheit").innerHTML = robustheit;
-    var willenskraft = localStorage['willenskraft'];
-    document.getElementById("curWillenskraft").innerHTML = willenskraft;
-    var wahrnehmung = localStorage['wahrnehmung'];
-    document.getElementById("curWahrnehmung").innerHTML = wahrnehmung;
-    var intelligenz = localStorage['intelligenz'];
-    document.getElementById("curIntelligenz").innerHTML = intelligenz;
-    var auftreten = localStorage['auftreten'];
-    document.getElementById("curAuftreten").innerHTML = auftreten;
+function savePoints() {
+    localStorage['spielerName'] = spielerName;
+    localStorage['rasse'] = rasse.value;
+    localStorage['kultur'] = kultur.value;
+    localStorage['staerke'] = staerke;
+    localStorage['geschicklichkeit'] = geschicklichkeit;
+    localStorage['willenskraft'] = willenskraft;
+    localStorage['robustheit'] = robustheit;
+    localStorage['wahrnehmung'] = wahrnehmung;
+    localStorage['intelligenz'] = intelligenz;
+    localStorage['auftreten'] = auftreten;
+    localStorage['neuerSpieler'] = neuerSpieler;
 }
